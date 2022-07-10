@@ -53,6 +53,8 @@ class ViewController: UIViewController {
         else {
             resultLabel.text = "지원하지 않는 신조어 입니다."
         }
+        
+        view.endEditing(true)
     }
     
     
@@ -72,6 +74,9 @@ class ViewController: UIViewController {
         resultLabel.text = "꾸민듯 안 꾸민듯"
     }
     
+    @IBAction func tapGesture(_ sender: Any) {
+        view.endEditing(true)
+    }
     
     
 }
