@@ -17,8 +17,13 @@ func hashButtonStyle(btnNumber: UIButton, btnTitle: String){
 }
 
 
-enum newlyCoinedWordList {
-    case 머선129, 무물보, 어쩔티비, 쿠쿠루삥뽕, 알잘딱깔센, 삼귀자
+enum word: String {
+    case 머선129 = "무슨일이야?"
+    case 무물보 = "무엇이든지 물어보세요"
+    case 어쩔티비 = "어쩌라고 티비나 봐"
+    case 쿠쿠루삥뽕 = "ㅋㅋㅋㅋㅋㅋ(비웃음)"
+    case 알잘딱깔쎈 = "알아서 잘 딱 깔끔하고 센스있게"
+    case 삼귀자 = "사귀기 전 단계"
 }
 
 class ViewController: UIViewController {
@@ -32,10 +37,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnHash4: UIButton!
     
     @IBOutlet weak var resultLabel: UILabel!
-    
-    
-    
-    var word1: newlyCoinedWordList = .머선129
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,21 +53,22 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnSearchClicked(_ sender: UIButton) {
-        if userTextField.text
         
-        switch word1 {
-        case .머선129:
-            resultLabel.text = "무슨 일이야?"
-        case .무물보:
-            resultLabel.text = "무엇이든 물어보세요"
-        case .어쩔티비:
-            resultLabel.text = "어쩌라고 가서 티비나 봐"
-        case .쿠쿠루삥뽕:
-            resultLabel.text = "ㅋㅋㅋㅋㅋㅋ(비웃는 소리)"
-        case .알잘딱깔센:
-            resultLabel.text = "알아서 잘 딱 깔끔하고 센스있게"
-        case .삼귀자:
-            resultLabel.text = "썸타기 전 단계"
+        switch self.userTextField.text {
+        case "머선129":
+            resultLabel.text = word.머선129.rawValue
+        case "무물보":
+            resultLabel.text = word.무물보.rawValue
+        case "어쩔티비":
+            resultLabel.text = word.어쩔티비.rawValue
+        case "쿠쿠루삥뽕":
+            resultLabel.text = word.쿠쿠루삥뽕.rawValue
+        case "알잘딱깔쎈":
+            resultLabel.text = word.알잘딱깔쎈.rawValue
+        case "삼귀자":
+            resultLabel.text = word.삼귀자.rawValue
+        default:
+            resultLabel.text = "지원하지 않거나 잘못된 텍스트를 입력하셨습니다."
         }
         
         view.endEditing(true)
